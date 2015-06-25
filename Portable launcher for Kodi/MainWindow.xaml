@@ -1,0 +1,259 @@
+﻿<!-- Portable launcher for Kodi - launches Kodi/XBMC in portable mode and mounts user's media folder as a virtual hard drive, among other things
+Copyright © 2015 nidunc
+ 
+This file is part of "Portable launcher for Kodi"
+ 
+"Portable launcher for Kodi" is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+ 
+"Portable launcher for Kodi" is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+ 
+You should have received a copy of the GNU General Public License
+along with "Portable launcher for Kodi".  If not, see <http://www.gnu.org/licenses/> .-->
+
+<controls:MetroWindow
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:custom="http://metro.mahapps.com/winfx/xaml/shared" x:Class="KodiPortableLauncher.MainWindow"
+	x:Name="MainWindow1"
+	mc:Ignorable="d"
+	Title="Portable launcher for Kodi"
+	Height="500" MinHeight="500"
+	Width="750" MinWidth="750"
+
+	BorderBrush="{DynamicResource AccentColorBrush}"
+	BorderThickness="1"
+
+	WindowStartupLocation="CenterScreen">
+	<controls:MetroWindow.Resources>
+		<Style x:Key="SquareButton" TargetType="{x:Type Button}">
+			<Setter Property="controls:ButtonHelper.CornerRadius" Value="3" />
+			<Setter Property="MinHeight" Value="25" />
+			<Setter Property="FontWeight" Value="Bold" />
+			<Setter Property="FontSize" Value="{DynamicResource UpperCaseContentFontSize}" />
+			<Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+			<Setter Property="Background" Value="{DynamicResource GrayBrush10}" />
+			<Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}" />
+			<Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+			<Setter Property="Padding" Value="5,6" />
+			<Setter Property="BorderThickness" Value="1" />
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="{x:Type Button}">
+						<Grid>
+							<Border x:Name="Background" Background="{TemplateBinding Background}"
+							        CornerRadius="{Binding (controls:ButtonHelper.CornerRadius), Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" />
+							<Border x:Name="Border" BorderBrush="{TemplateBinding BorderBrush}"
+							        BorderThickness="{TemplateBinding BorderThickness}" Background="{x:Null}"
+							        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+							<Border x:Name="DisabledVisualElement" Background="{DynamicResource ControlsDisabledBrush}"
+							        CornerRadius="{Binding (controls:ButtonHelper.CornerRadius), Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
+							        IsHitTestVisible="False" Opacity="0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+							<ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}"
+							                  Content="{TemplateBinding Content}"
+							                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+							                  Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
+							                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+							                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+						</Grid>
+						<ControlTemplate.Triggers>
+							<Trigger Property="controls:ButtonHelper.PreserveTextCase" Value="False">
+								<Setter Property="Content" TargetName="contentPresenter"
+								        Value="{Binding Content, Converter={custom:ToUpperConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+							</Trigger>
+							<Trigger Property="controls:ButtonHelper.PreserveTextCase" Value="True">
+								<Setter Property="Content" TargetName="contentPresenter"
+								        Value="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" />
+							</Trigger>
+							<Trigger Property="IsMouseOver" Value="True">
+								<Setter Property="Background" TargetName="Background" Value="{DynamicResource GrayBrush8}" />
+							</Trigger>
+							<Trigger Property="IsPressed" Value="True">
+								<Setter Property="Background" TargetName="Background" Value="{DynamicResource GrayBrush7}" />
+							</Trigger>
+							<Trigger Property="IsKeyboardFocusWithin" Value="True">
+								<Setter Property="BorderThickness" TargetName="Border" Value="2" />
+								<Setter Property="BorderBrush" TargetName="Border" Value="{DynamicResource ButtonMouseOverBorderBrush}" />
+							</Trigger>
+							<Trigger Property="IsEnabled" Value="False">
+								<Setter Property="Opacity" TargetName="DisabledVisualElement" Value="0.7" />
+								<Setter Property="Opacity" TargetName="contentPresenter" Value="0.3" />
+							</Trigger>
+						</ControlTemplate.Triggers>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</controls:MetroWindow.Resources>
+	<controls:MetroWindow.RightWindowCommands>
+		<controls:WindowCommands>
+			<Button x:Name="BtnSettings" ToolTip="Settings">
+				<StackPanel Orientation="Horizontal">
+					<Rectangle Width="20" Height="20"
+					           Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}">
+						<Rectangle.OpacityMask>
+							<VisualBrush Stretch="Uniform"
+							             Visual="{StaticResource appbar_settings}" />
+						</Rectangle.OpacityMask>
+					</Rectangle>
+				</StackPanel>
+			</Button>
+			<Button x:Name="BtnHelp" ToolTip="Help">
+				<StackPanel Orientation="Horizontal">
+					<Rectangle Width="20" Height="20"
+					           Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}">
+						<Rectangle.OpacityMask>
+							<VisualBrush Stretch="Uniform"
+							             Visual="{StaticResource appbar_question}" />
+						</Rectangle.OpacityMask>
+					</Rectangle>
+				</StackPanel>
+			</Button>
+			<Button x:Name="BtnAbout" ToolTip="About" Click="BtnAbout_Click">
+				<StackPanel Orientation="Horizontal">
+					<Rectangle Width="20" Height="20"
+					           Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}">
+						<Rectangle.OpacityMask>
+							<VisualBrush Stretch="Uniform"
+							             Visual="{StaticResource appbar_information_circle}" />
+						</Rectangle.OpacityMask>
+					</Rectangle>
+				</StackPanel>
+			</Button>
+		</controls:WindowCommands>
+	</controls:MetroWindow.RightWindowCommands>
+	<Grid>
+		<controls:MetroAnimatedSingleRowTabControl x:Name="NavigationTabControl">
+			<TabItem x:Name="FirstRun" Header="First run" IsEnabled="False" Height="0">
+				<Grid x:Name="FirstRunGrid">
+					<controls:MetroAnimatedSingleRowTabControl x:Name="FirstRunTabControl">
+						<TabItem x:Name="FirstRunStep1" Height="0">
+							<Grid Margin="0,86,0,87" MaxHeight="337" VerticalAlignment="Center">
+								<TextBlock Margin="10" TextWrapping="Wrap" TextAlignment="Center" FontSize="40" VerticalAlignment="Center">
+									<Run Text="Welcome to [Kodi portable launcher]!" /><LineBreak />
+									<Run FontSize="24" Text="This program will" />
+									<Run FontWeight="Bold" FontStyle="Italic" FontSize="24" Text="supercharge" />
+									<Run FontSize="24" Text="your portable Kodi* installation" /><LineBreak />
+									<Run FontSize="24" Text="Click the button to begin" /><LineBreak /><Run FontSize="24" /><LineBreak />
+									<Run FontSize="24" /><LineBreak /><Run FontSize="13.333" Text="*XBMC is also supported" /><LineBreak />
+									<Run FontSize="13.333" Text="**No rockets will launch" />
+								</TextBlock>
+								<Button x:Name="BtnGoToFirstRunStep2" Click="BtnGoToFirstRunStep2_Click" Width="180"
+								        Margin="280,160,280,48">
+									<StackPanel Orientation="Horizontal">
+										<Rectangle Width="25" Height="25"
+										           Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}">
+											<Rectangle.OpacityMask>
+												<VisualBrush Stretch="Fill"
+												             Visual="{StaticResource appbar_rocket_rotated_45}" />
+											</Rectangle.OpacityMask>
+										</Rectangle>
+										<TextBlock Margin="4 0 0 0"
+										           VerticalAlignment="Center"
+										           Text="Lift Off**" FontSize="28" FontWeight="Normal" />
+									</StackPanel>
+								</Button>
+							</Grid>
+						</TabItem>
+						<TabItem x:Name="FirstRunStep2" Height="0">
+							<Grid>
+								<TextBlock TextWrapping="Wrap" TextAlignment="Center" FontSize="32" Height="100" VerticalAlignment="Top"
+								           Margin="0,30,0,0" HorizontalAlignment="Center">
+									<Run FontSize="36" Text="Great!" /><LineBreak /><Run Text="Let's get started" />
+								</TextBlock>
+								<controls:MetroAnimatedTabControl x:Name="FirstRunStep2TabControl" Margin="0,136,0,0">
+									<TabItem x:Name="FirstRunStep2Part1" Height="0">
+										<Grid Margin="10">
+											<TextBlock Text="Do you use Kodi or XBMC?" VerticalAlignment="Top" Margin="160,10,160,0" FontSize="18"
+											           TextAlignment="Center" />
+											<ComboBox x:Name="CbKodiOrXbmc1" VerticalAlignment="Top" Margin="310,50,310,0"
+											          SelectionChanged="CbKodiOrXbmc1_SelectionChanged" HorizontalAlignment="Center" Width="100">
+												<ComboBoxItem x:Name="CbiChoiceKodi1" Content="Kodi" />
+												<ComboBoxItem x:Name="CbiChoiceXbmc1" Content="XBMC" />
+											</ComboBox>
+											<TextBlock x:Name="TbSelectKodiXbmcExeLocation1" TextWrapping="Wrap"
+											           Text="Where is your Kodi/XBMC executable located?" VerticalAlignment="Top" Margin="160,110,160,0"
+											           FontSize="18" TextAlignment="Center" />
+											<StackPanel Orientation="Horizontal" Height="26" Width="350" HorizontalAlignment="Center"
+											            Margin="185,150,185,120" VerticalAlignment="Top">
+												<TextBox x:Name="TxtKodiXbmcExeLocation1" IsReadOnly="True" Width="290" />
+												<Button x:Name="BtnBrowseKodiXbmcExe1" Content="Browse" Style="{DynamicResource SquareButton}"
+												        Click="BtnBrowseKodiXbmcExe1_Click" Width="60" />
+											</StackPanel>
+											<Button x:Name="BtnGoToFirstRunStep2Part2" Content="Next" Margin="0,0,40,20" FontSize="14"
+											        Click="BtnGoToFirstRunStep2Part2_Click" Height="30" VerticalAlignment="Bottom"
+											        HorizontalAlignment="Right" Width="70" />
+										</Grid>
+									</TabItem>
+									<TabItem x:Name="FirstRunStep2Part2" Height="0">
+										<Grid Margin="10">
+											<TextBlock Text="Where is your media folder located?" VerticalAlignment="Top" Margin="0,10,0,0"
+											           FontSize="18" TextAlignment="Center" HorizontalAlignment="Center" />
+											<StackPanel Orientation="Horizontal" Height="26" Width="400" HorizontalAlignment="Center"
+											            VerticalAlignment="Top" Margin="0,50,0,0">
+												<TextBox x:Name="TxtMediaFolderLocation1" IsReadOnly="True" Width="340" />
+												<Button x:Name="BtnBrowseMediaFolder1" Content="Browse" Style="{DynamicResource SquareButton}" Width="60"
+												        Click="BtnBrowseMediaFolder1_Click" />
+											</StackPanel>
+											<TextBlock TextWrapping="Wrap" Text="Which drive letter would you like to mount your media folder to?"
+											           VerticalAlignment="Top" Margin="0,110,0,0" FontSize="18" TextAlignment="Center"
+											           HorizontalAlignment="Center" />
+											<ComboBox x:Name="cbDriveLetter1" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120"
+											          Margin="0,150,0,0" />
+											<Button x:Name="BtnGoToFirstRunStep2Part3" Content="Next" Margin="0,0,40,20" FontSize="14" Height="30"
+											        VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="70"
+											        Click="BtnGoToFirstRunStep2Part3_Click" />
+										</Grid>
+									</TabItem>
+								</controls:MetroAnimatedTabControl>
+							</Grid>
+						</TabItem>
+					</controls:MetroAnimatedSingleRowTabControl>
+				</Grid>
+			</TabItem>
+			<TabItem x:Name="HomePage" Header="Homepage" IsEnabled="False" Visibility="Collapsed">
+				<Grid x:Name="HomePageGrid" />
+			</TabItem>
+		</controls:MetroAnimatedSingleRowTabControl>
+	</Grid>
+	<controls:MetroWindow.Flyouts>
+		<controls:FlyoutsControl>
+			<controls:Flyout x:Name="AboutFlyout" Header="About" AnimateOpacity="True" Theme="Light" Position="Top"
+			                 IsModal="True">
+				<Grid Margin="20">
+					<StackPanel Orientation="Vertical">
+						<TextBlock Text="Portable launcher for Kodi" FontSize="32" />
+						<TextBlock x:Name="aboutDesc" FontStyle="Italic" FontSize="18.667" TextWrapping="WrapWithOverflow" />
+						<TextBlock FontSize="13.333">
+							<Run Text="Version: " /><Run x:Name="aboutVersion" /><LineBreak /><LineBreak />
+							<Run x:Name="devCopyright" /><LineBreak />
+							<Hyperlink NavigateUri="http://mahapps.com" RequestNavigate="Hyperlink_RequestNavigate"
+							           ToolTip="Mahapps.Metro website">
+								<Run Text="Mahapps.Metro" />
+							</Hyperlink>
+							<Run Text="licensed under the" />
+							<Hyperlink NavigateUri="http://opensource.org/licenses/MS-PL" RequestNavigate="Hyperlink_RequestNavigate">
+								<Run Text="Microsoft Public License (Ms-PL)" />
+							</Hyperlink><LineBreak />
+							<Hyperlink NavigateUri="https://github.com/aybe/Windows-API-Code-Pack-1.1" RequestNavigate="Hyperlink_RequestNavigate">
+								<Run Text="Windows API Code Pack" />
+							</Hyperlink>
+							<Run Text="uses an unknown license, copyright presumably Microsoft"/>
+						</TextBlock>
+					</StackPanel>
+				</Grid>
+				<!-- "Copyright © 2015 nidunc\n" +
+							 "Mahapps.Metro licensed under the Microsoft Public License (Ms-PL)\n" +
+							 "Windows API Code Pack licensed under [unknown license]; copyright © Microsoft" -->
+			</controls:Flyout>
+		</controls:FlyoutsControl>
+	</controls:MetroWindow.Flyouts>
+</controls:MetroWindow>
