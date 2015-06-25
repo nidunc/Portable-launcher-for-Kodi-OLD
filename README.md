@@ -73,9 +73,9 @@ by Simon Cropp and Cameron MacFarland, for merging the program and all reference
 into one `.exe` file, so the end-user doesn't have to download a ton of `.dll` files.
 Licensed under the [MIT License](http://opensource.org/licenses/MIT).
 
-## License ![License: GPLv3](https://img.shields.io/badge/license-GPLv3-blue.svg?style=flat-square)
+## License [![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg?style=flat-square)](https://raw.githubusercontent.com/nidunc/Portable-launcher-for-Kodi/master/LICENSE)
 > ```
-> Copyright © 2015 nidunc  
+> Copyright Â© 2015 nidunc  
 >
 > "Portable launcher for Kodi" is free software: you can redistribute it and/or modify
 > it under the terms of the GNU General Public License as published by
@@ -92,5 +92,5 @@ Licensed under the [MIT License](http://opensource.org/licenses/MIT).
 > ```
 > Full license in [LICENSE](https://raw.githubusercontent.com/nidunc/Portable-launcher-for-Kodi/master/LICENSE)
 
-Kodi™ and XBMC™ are registered trademarks of the XBMC Foundation.  
+Kodiâ„¢ and XBMCâ„¢ are registered trademarks of the XBMC Foundation.  
 I am not affiliated with the Foundation in any way, nor do I claim to be.
