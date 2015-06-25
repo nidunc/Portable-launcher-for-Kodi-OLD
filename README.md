@@ -23,9 +23,9 @@ Kodi's settings, and every time all media has to be re-added.
 Nobody wants to have to do that the whole time, right? Which is where this program comes in.
 
 Before your media folder would be located here:  
-Computer 1: `D:\Media`
-Computer 2: `E:\Media`
-Computer 3: `F:\Media`
+Computer 1: `D:\Media`  
+Computer 2: `E:\Media`  
+Computer 3: `F:\Media`  
 
 After this program does its work, it's still located in those folders, but also in `X:\` (or whichever letter
 you choose) on every computer.  
@@ -73,7 +73,7 @@ by Simon Cropp and Cameron MacFarland, for merging the program and all reference
 into one `.exe` file, so the end-user doesn't have to download a ton of `.dll` files.
 Licensed under the [MIT License](http://opensource.org/licenses/MIT).
 
-## License
+## License ![License: GPLv3](https://img.shields.io/badge/license-GPLv3-blue.svg?style=flat-square)
 > ```
 > Copyright © 2015 nidunc  
 >
@@ -90,6 +90,7 @@ Licensed under the [MIT License](http://opensource.org/licenses/MIT).
 > You should have received a copy of the GNU General Public License
 > along with "Portable launcher for Kodi".  If not, see <http://www.gnu.org/licenses/>.
 > ```
+> Full license in [LICENSE](https://raw.githubusercontent.com/nidunc/Portable-launcher-for-Kodi/master/LICENSE)
 
 Kodi™ and XBMC™ are registered trademarks of the XBMC Foundation.  
 I am not affiliated with the Foundation in any way, nor do I claim to be.
