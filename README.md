@@ -55,11 +55,6 @@ and uninstall Kodi from the computer afterwards (if it was installed to Program 
 - [ ] TO-DO: use a different way of storing settings that is portable
 - [ ] TO-DO: install/update Kodi automatically
 
-## License
-Copyright © 2015 nidunc  
-This program is licensed under the GPLv3 (GNU General Public License version 3).  
-The license is in the "LICENSE" file in the root of this repository.
-
 ## Kodi forums page
 [[Windows] Portable launcher for Kodi](http://forum.kodi.tv/showthread.php?tid=226857)
 
@@ -77,6 +72,24 @@ Unknown license.
 by Simon Cropp and Cameron MacFarland, for merging the program and all references (dependencies)
 into one `.exe` file, so the end-user doesn't have to download a ton of `.dll` files.
 Licensed under the [MIT License](http://opensource.org/licenses/MIT).
+
+## License
+> ```
+> Copyright © 2015 nidunc  
+>
+> "Portable launcher for Kodi" is free software: you can redistribute it and/or modify
+> it under the terms of the GNU General Public License as published by
+> the Free Software Foundation, either version 3 of the License, or
+> (at your option) any later version.
+> 
+> "Portable launcher for Kodi" is distributed in the hope that it will be useful,
+> but WITHOUT ANY WARRANTY; without even the implied warranty of
+> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> GNU General Public License for more details.
+> 
+> You should have received a copy of the GNU General Public License
+> along with "Portable launcher for Kodi".  If not, see <http://www.gnu.org/licenses/>.
+> ```
 
 Kodi™ and XBMC™ are registered trademarks of the XBMC Foundation.  
 I am not affiliated with the Foundation in any way, nor do I claim to be.
