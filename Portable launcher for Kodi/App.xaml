@@ -1,4 +1,22 @@
-﻿<Application x:Class="KodiPortableLauncher.App"
+﻿<!-- Portable launcher for Kodi - launches Kodi/XBMC in portable mode and mounts user's media folder as a virtual hard drive, among other things
+Copyright © 2015 nidunc
+
+This file is part of "Portable launcher for Kodi"
+
+"Portable launcher for Kodi" is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+"Portable launcher for Kodi" is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with "Portable launcher for Kodi".  If not, see <http://www.gnu.org/licenses/>. -->
+
+<Application x:Class="KodiPortableLauncher.App"
 			 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 			 StartupUri="MainWindow.xaml">
@@ -13,6 +31,7 @@
 				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
 				<ResourceDictionary Source="/Resources/Icons.xaml" />
 			</ResourceDictionary.MergedDictionaries>
+			<BitmapImage x:Key="Favicon" UriSource="Resources/favicon.ico" />
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>
