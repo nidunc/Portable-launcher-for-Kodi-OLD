@@ -1,20 +1,20 @@
 ﻿<!-- Portable launcher for Kodi - launches Kodi/XBMC in portable mode and mounts user's media folder as a virtual hard drive, among other things
 Copyright © 2015 nidunc
- 
+
 This file is part of "Portable launcher for Kodi"
- 
+
 "Portable launcher for Kodi" is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
- 
+
 "Portable launcher for Kodi" is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
- 
+
 You should have received a copy of the GNU General Public License
-along with "Portable launcher for Kodi".  If not, see <http://www.gnu.org/licenses/> .-->
+along with "Portable launcher for Kodi".  If not, see <http://www.gnu.org/licenses/>. -->
 
 <controls:MetroWindow
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -32,7 +32,7 @@ along with "Portable launcher for Kodi".  If not, see <http://www.gnu.org/licens
 	BorderBrush="{DynamicResource AccentColorBrush}"
 	BorderThickness="1"
 
-	WindowStartupLocation="CenterScreen">
+	WindowStartupLocation="CenterScreen" Icon="{DynamicResource Favicon}">
 	<controls:MetroWindow.Resources>
 		<Style x:Key="SquareButton" TargetType="{x:Type Button}">
 			<Setter Property="controls:ButtonHelper.CornerRadius" Value="3" />
@@ -233,26 +233,53 @@ along with "Portable launcher for Kodi".  If not, see <http://www.gnu.org/licens
 						<TextBlock Text="Portable launcher for Kodi" FontSize="32" />
 						<TextBlock x:Name="aboutDesc" FontStyle="Italic" FontSize="18.667" TextWrapping="WrapWithOverflow" />
 						<TextBlock FontSize="13.333">
-							<Run Text="Version: " /><Run x:Name="aboutVersion" /><LineBreak /><LineBreak />
+							<Run Text="Version: " /><Run x:Name="aboutVersion" /><LineBreak />
+						</TextBlock>
+						<Button ToolTip="GitHub page">
+							<Hyperlink NavigateUri="https://github.com/nidunc/Portable-launcher-for-Kodi"
+							           RequestNavigate="Hyperlink_RequestNavigate" TextDecorations="None">
+								<StackPanel Orientation="Horizontal">
+									<Rectangle Width="30" Height="30"
+									           Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}">
+										<Rectangle.OpacityMask>
+											<VisualBrush Stretch="Uniform"
+											             Visual="{StaticResource appbar_github}" />
+										</Rectangle.OpacityMask>
+									</Rectangle>
+								</StackPanel>
+								<TextBlock Text="GitHub page"></TextBlock>
+							</Hyperlink>
+						</Button>
+						<TextBlock FontSize="13.333">
+							<LineBreak />
 							<Run x:Name="devCopyright" /><LineBreak />
+							<Run Text="Portable launcher for Kodi licensed under the" />
+							<Hyperlink NavigateUri="https://gnu.org/licenses/gpl.txt" RequestNavigate="Hyperlink_RequestNavigate"
+							           ToolTip="https://gnu.org/licenses/gpl.txt">
+								<Run Text="GPLv3 (GNU General Public License version 3)" />
+							</Hyperlink>
+							<LineBreak /><LineBreak />
 							<Hyperlink NavigateUri="http://mahapps.com" RequestNavigate="Hyperlink_RequestNavigate"
-							           ToolTip="Mahapps.Metro website">
+							           ToolTip="http://mahapps.com">
 								<Run Text="Mahapps.Metro" />
 							</Hyperlink>
-							<Run Text="licensed under the" />
-							<Hyperlink NavigateUri="http://opensource.org/licenses/MS-PL" RequestNavigate="Hyperlink_RequestNavigate">
+							<Run Text="(used for the user interface) licensed under the" />
+							<Hyperlink NavigateUri="https://msdn.microsoft.com/en-us/library/ff649456.aspx"
+							           RequestNavigate="Hyperlink_RequestNavigate"
+							           ToolTip="https://msdn.microsoft.com/en-us/library/ff649456.aspx">
 								<Run Text="Microsoft Public License (Ms-PL)" />
-							</Hyperlink><LineBreak />
-							<Hyperlink NavigateUri="https://github.com/aybe/Windows-API-Code-Pack-1.1" RequestNavigate="Hyperlink_RequestNavigate">
+							</Hyperlink>
+							<LineBreak />
+							<Hyperlink NavigateUri="https://github.com/aybe/Windows-API-Code-Pack-1.1"
+							           RequestNavigate="Hyperlink_RequestNavigate"
+							           ToolTip="https://github.com/aybe/Windows-API-Code-Pack-1.1">
 								<Run Text="Windows API Code Pack" />
 							</Hyperlink>
-							<Run Text="uses an unknown license, copyright presumably Microsoft"/>
+							<Run Text="(used for the folder browser) uses an unknown license" /><LineBreak />
+							<Run Text="Kodi™ and XBMC™ are registered trademarks of the XBMC Foundation." />
 						</TextBlock>
 					</StackPanel>
 				</Grid>
-				<!-- "Copyright © 2015 nidunc\n" +
-							 "Mahapps.Metro licensed under the Microsoft Public License (Ms-PL)\n" +
-							 "Windows API Code Pack licensed under [unknown license]; copyright © Microsoft" -->
 			</controls:Flyout>
 		</controls:FlyoutsControl>
 	</controls:MetroWindow.Flyouts>
