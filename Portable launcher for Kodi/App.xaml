@@ -24,6 +24,7 @@ along with "Portable launcher for Kodi".  If not, see <http://www.gnu.org/licens
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>
 				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.Expander.xaml" />
 				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
 				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
 				<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
@@ -32,6 +33,7 @@ along with "Portable launcher for Kodi".  If not, see <http://www.gnu.org/licens
 				<ResourceDictionary Source="/Resources/Icons.xaml" />
 			</ResourceDictionary.MergedDictionaries>
 			<BitmapImage x:Key="Favicon" UriSource="Resources/favicon.ico" />
+			<BitmapImage x:Key="KodiLogo" UriSource="Resources/Kodi.png" />
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>
