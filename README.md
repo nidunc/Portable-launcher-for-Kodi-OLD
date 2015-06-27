@@ -1,4 +1,13 @@
 # Portable launcher for Kodi
+## Table of contents
+- [Introduction](#introduction)
+- [Requirements](#requirements)
+- [Installation](#installation-and-usage)
+- [Features](#features)
+- [Kodi forums thread](#kodi-forums-thread)
+- [Third-party libraries/tools used](#third-party-librariestools-used)
+- [License](#license-)
+
 ## Introduction
 I was recently doing some research on using [Kodi/XBMC](http://kodi.tv) (hereafter referred to as just Kodi)
 as a completely portable media centre, and I found this thread on the Kodi forum (which helped me out a lot):
@@ -33,17 +42,21 @@ So, essentially, what this program does is mount your media folder as a virtual 
 Kodi in portable mode, in which you can then (for example) specify `X:\Music`, `X:\TV-series` and `X:\Films`
 as your media sources, without ever having to change that again.
 
+I'm planning to add more functionality in the future, such as the ability to keep the Kodi instllation up-to-date
+
 ## Requirements
 - At least Windows Vista; Windows 7 or higher recommended
 - Microsoft .NET Framework 4.5.1 (installed by default on most modern Windows installations)
 - Kodi (or XBMC)
 
-## Installation
+## Installation and usage
 Nothing to install, just a single `.exe` file.
 Download from [/releases](https://github.com/nidunc/Portable-launcher-for-Kodi/releases).  
 On first launch, the program will ask you for a few things, which it needs to be able to work.
 You can change these settings after the first launch through the program's settings
-(the gear icon in the top-right - appears after you've finished the initial setup).
+(the gear icon in the top-right - appears after you've finished the initial setup). The rest of the program should be pretty clear and not need any explanation, but if you need help you're free to contact me at the Kodi forums thread below, or create an issue.
+
+Please do note that the program is currently in an experimental phase, which means that it might not be very stable, and you might encounter problems while using it.
 
 ## Features
 - [x] Launch Kodi in portable mode (with `Kodi.exe -p`)
@@ -55,7 +68,7 @@ and uninstall Kodi from the computer afterwards (if it was installed to Program 
 - [ ] TO-DO: use a different way of storing settings that is portable
 - [ ] TO-DO: install/update Kodi automatically
 
-## Kodi forums page
+## Kodi forums thread
 [[Windows] Portable launcher for Kodi](http://forum.kodi.tv/showthread.php?tid=226857)
 
 ## Third-party libraries/tools used
