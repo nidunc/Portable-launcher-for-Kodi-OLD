@@ -1,5 +1,7 @@
 # Portable launcher for Kodi
 ## Table of contents
+
+[![Join the chat at https://gitter.im/nidunc/Portable-launcher-for-Kodi](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/nidunc/Portable-launcher-for-Kodi?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 - [Introduction](#introduction)
 - [Requirements](#requirements)
 - [Installation](#installation-and-usage)
