@@ -1,12 +1,12 @@
 # Portable launcher for Kodi
+[![GitHub issues](https://img.shields.io/github/issues/nidunc/Portable-launcher-for-Kodi.svg?style=flat-square)](https://github.com/nidunc/Portable-launcher-for-Kodi/issues)
 ## Table of contents
 
-[![Join the chat at https://gitter.im/nidunc/Portable-launcher-for-Kodi](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/nidunc/Portable-launcher-for-Kodi?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 - [Introduction](#introduction)
 - [Requirements](#requirements)
 - [Installation](#installation-and-usage)
 - [Features](#features)
-- [Kodi forums thread](#kodi-forums-thread)
+- [Contact me](#contact-me)
 - [Third-party libraries/tools used](#third-party-librariestools-used)
 - [License](#license-)
 
@@ -56,7 +56,7 @@ Nothing to install, just a single `.exe` file.
 Download from [/releases](https://github.com/nidunc/Portable-launcher-for-Kodi/releases).  
 On first launch, the program will ask you for a few things, which it needs to be able to work.
 You can change these settings after the first launch through the program's settings
-(the gear icon in the top-right - appears after you've finished the initial setup). The rest of the program should be pretty clear and not need any explanation, but if you need help you're free to contact me at the Kodi forums thread below, or create an issue.
+(the gear icon in the top-right - appears after you've finished the initial setup). The rest of the program should be pretty clear and not need any explanation, but if you need help feel free to [contact me](#contact-me).
 
 Please do note that the program is currently in an experimental phase, which means that it might not be very stable, and you might encounter problems while using it.
 
@@ -70,9 +70,15 @@ and uninstall Kodi from the computer afterwards (if it was installed to Program 
 - [ ] TO-DO: use a different way of storing settings that is portable
 - [ ] TO-DO: install/update Kodi automatically
 
-## Kodi forums thread
-[[Windows] Portable launcher for Kodi](http://forum.kodi.tv/showthread.php?tid=226857)
+**What would you like to see? [Shoot me a message](#contact-me)!**
 
+## Contact me
+#### Thread on the Kodi forum
+[[Windows] Portable launcher for Kodi](http://forum.kodi.tv/showthread.php?tid=226857)
+#### Gitter
+[![Join the chat at https://gitter.im/nidunc/Portable-launcher-for-Kodi](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/nidunc/Portable-launcher-for-Kodi)
+#### Create an issue
+https://github.com/nidunc/Portable-launcher-for-Kodi/issues/new
 ## Third-party libraries/tools used
 - [MahApps.Metro](http://mahapps.com) ([GitHub](https://github.com/MahApps/MahApps.Metro/))
 by Paul Jenkins, Jake Ginnivan, Brendan Forster (shiftkey), Alex Mitchell (Amrykid), Dennis Daume (flagbug),
