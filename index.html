@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Portable-launcher-for-kodi by nidunc</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Portable-launcher-for-kodi</h1>
+        <h2>A program which launches Kodi/XBMC in portable mode and mounts the user&#39;s media folder as a virtual hard drive, among other things.</h2>
+        <a href="https://github.com/nidunc/Portable-launcher-for-Kodi" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="portable-launcher-for-kodi--" class="anchor" href="#portable-launcher-for-kodi--" aria-hidden="true"><span class="octicon octicon-link"></span></a>Portable launcher for Kodi <a href="https://raw.githubusercontent.com/nidunc/Portable-launcher-for-Kodi/master/LICENSE"><img src="https://img.shields.io/badge/license-GPLv3-blue.svg?style=flat-square" alt="GitHub license"></a> <a href="https://github.com/nidunc/Portable-launcher-for-Kodi/issues"><img src="https://img.shields.io/github/issues/nidunc/Portable-launcher-for-Kodi.svg?style=flat-square" alt="GitHub issues"></a>
+</h1>
+
+<h2>
+<a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"><span class="octicon octicon-link"></span></a>Table of contents</h2>
+
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#installation-and-usage">Installation</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#contact-me">Contact me</a></li>
+<li><a href="#third-party-librariestools-used">Third-party libraries/tools used</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+
+<h2>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h2>
+
+<p>I was recently doing some research on using <a href="http://kodi.tv">Kodi/XBMC</a> (hereafter referred to as just Kodi)
+as a completely portable media centre, and I found this thread on the Kodi forum (which helped me out a lot):
+<a href="http://forum.kodi.tv/showthread.php?tid=94181">[Windows] Relative paths in portable mode</a>.<br>
+There was one problem: everything had to be done through a batch file,
+which may ward off less-experienced users,
+and I couldn't find a GUI program that does the same as the batch file.<br>
+So I decided to make a program myself, which does (almost) the same as the batch file in the aforementioned forum thread, and more.</p>
+
+<hr>
+
+<p>If you're wondering why you need this program or a batch file in the first place to make Kodi portable,
+let me explain it to you.<br>
+Out-of-the-box Kodi is already able to be used as a fully-fledged portable media center (provided DirectX
+and the Visual C++ Redistributables are installed on every one of them, of course),
+but with one flaw: the media sources are static, which can cause problems if you use the same Kodi installation
+on multiple computers, because an external hard drive almost never has the same drive letter.  </p>
+
+<p>On one computer your media folder could be located at <code>D:\Media</code>.
+On another computer this might be <code>E:\Media</code>. Or <code>F:\Media</code>. And every time this path has to be updated in
+Kodi's settings, and every time all media has to be re-added.
+Nobody wants to have to do that the whole time, right? Which is where this program comes in.</p>
+
+<p>Before your media folder would be located here:<br>
+Computer 1: <code>D:\Media</code><br>
+Computer 2: <code>E:\Media</code><br>
+Computer 3: <code>F:\Media</code>  </p>
+
+<p>After this program does its work, it's still located in those folders, but also in <code>X:\</code> (or whichever letter
+you choose) on every computer.<br>
+So, essentially, what this program does is mount your media folder as a virtual hard drive, and then launch
+Kodi in portable mode, in which you can then (for example) specify <code>X:\Music</code>, <code>X:\TV-series</code> and <code>X:\Films</code>
+as your media sources, without ever having to change that again.</p>
+
+<p>I'm planning to add more functionality in the future, such as the ability to keep the Kodi instllation up-to-date</p>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<ul>
+<li>At least Windows Vista; Windows 7 or higher recommended</li>
+<li>Microsoft .NET Framework 4.5.1 (installed by default on most modern Windows installations)</li>
+<li>Kodi (or XBMC)</li>
+</ul>
+
+<h2>
+<a id="installation-and-usage" class="anchor" href="#installation-and-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation and usage</h2>
+
+<p>Nothing to install, just a single <code>.exe</code> file.
+Download from <a href="https://github.com/nidunc/Portable-launcher-for-Kodi/releases">/releases</a>.<br>
+On first launch, the program will ask you for a few things, which it needs to be able to work.
+You can change these settings after the first launch through the program's settings
+(the gear icon in the top-right - appears after you've finished the initial setup). The rest of the program should be pretty clear and not need any explanation, but if you need help feel free to <a href="#contact-me">contact me</a>.</p>
+
+<p>Please do note that the program is currently in an experimental phase, which means that it might not be very stable, and you might encounter problems while using it.</p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>[x] ALMOST DONE: Launch Kodi in portable mode (with <code>Kodi.exe -p</code>)</li>
+<li>[x] ALMOST DONE: Mount user's media folder (using the C# equivalent of <code>subst.exe</code>)</li>
+<li>[ ] TO-DO: move Kodi's installation folder to another place (an external hard drive, for example)
+if it's installed on the C:\ drive (such as <code>C:\Program Files (x86)\Kodi</code> or <code>C:\Program Files\Kodi</code>),<br>
+and uninstall Kodi from the computer afterwards (if it was installed to Program Files).</li>
+<li>[ ] TO-DO: move Kodi's application data (from <code>AppData</code>) to the "portable_data" folder in Kodi's installation folder upon moving Kodi from <code>Program Files</code>, so existing users can immmediately continue their work.</li>
+<li>[ ] TO-DO: use a different way of storing settings that is portable. There's nothing wrong with the current method I use (the built-in user settings), but a huge problem is is that with that method the settings are stored in the user's <code>AppData</code> folder, thus not portable/easily transferable. With the new method in place, the program can decide which method to use, depending on if the program is run from the system drive or an external hard drive (or USB-disk).</li>
+<li>[ ] TO-DO: install/update Kodi (either manually initiated by the user, or automatically, if the user chooses to do that)</li>
+</ul>
+
+<p><strong>What would you like to see? <a href="#contact-me">Shoot me a message</a>!</strong></p>
+
+<h2>
+<a id="contact-me" class="anchor" href="#contact-me" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contact me</h2>
+
+<h4>
+<a id="thread-on-the-kodi-forum" class="anchor" href="#thread-on-the-kodi-forum" aria-hidden="true"><span class="octicon octicon-link"></span></a>Thread on the Kodi forum</h4>
+
+<p><a href="http://forum.kodi.tv/showthread.php?tid=226857">[Windows] Portable launcher for Kodi</a></p>
+
+<h4>
+<a id="gitter" class="anchor" href="#gitter" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gitter</h4>
+
+<p><a href="https://gitter.im/nidunc/Portable-launcher-for-Kodi"><img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/nidunc/Portable-launcher-for-Kodi"></a></p>
+
+<h4>
+<a id="create-an-issue" class="anchor" href="#create-an-issue" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create an issue</h4>
+
+<p><a href="https://github.com/nidunc/Portable-launcher-for-Kodi/issues/new">/issues/new</a></p>
+
+<h2>
+<a id="third-party-librariestools-used" class="anchor" href="#third-party-librariestools-used" aria-hidden="true"><span class="octicon octicon-link"></span></a>Third-party libraries/tools used</h2>
+
+<ul>
+<li>
+<a href="http://mahapps.com">MahApps.Metro</a> (<a href="https://github.com/MahApps/MahApps.Metro/">GitHub</a>)
+by Paul Jenkins, Jake Ginnivan, Brendan Forster (shiftkey), Alex Mitchell (Amrykid), Dennis Daume (flagbug),
+Jan Karger (punker76) for the user interface, licensed under the
+<a href="https://msdn.microsoft.com/en-us/library/ff649456.aspx">Ms-PL (Microsoft Public License)</a>
+</li>
+<li>The MahApps.Metro.Resources package, which includes the <a href="http://modernuiicons.com/">Modern UI Icon Pack</a>
+(<a href="https://github.com/Templarian/WindowsIcons">GitHub</a>) (licensed under Creative Commons 3.0)
+by Austin Andrews of <a href="http://templarian.com/">Templarian.com</a>
+</li>
+<li>
+<a href="https://github.com/aybe/Windows-API-Code-Pack-1.1">Windows API Code Pack 1.1</a> by 'Aybe' for the folder browser.
+Unknown license.</li>
+<li>
+<a href="https://github.com/Fody/Fody">Fody</a> and <a href="https://github.com/Fody/Costura">Costura</a>
+by Simon Cropp and Cameron MacFarland, for merging the program and all references (dependencies)
+into one <code>.exe</code> file, so the end-user doesn't have to download a ton of <code>.dll</code> files.
+Licensed under the <a href="http://opensource.org/licenses/MIT">MIT License</a>.</li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<blockquote>
+<pre><code>Copyright © 2015 nidunc  
+
+"Portable launcher for Kodi" is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+"Portable launcher for Kodi" is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with "Portable launcher for Kodi".  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+</code></pre>
+
+<p>Full license in <a href="https://raw.githubusercontent.com/nidunc/Portable-launcher-for-Kodi/master/LICENSE">LICENSE</a></p>
+</blockquote>
+
+<p>Kodi™ and XBMC™ are registered trademarks of the XBMC Foundation.<br>
+I am not affiliated with the Foundation in any way, nor do I claim to be.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/nidunc/Portable-launcher-for-Kodi/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/nidunc/Portable-launcher-for-Kodi/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/nidunc/Portable-launcher-for-Kodi"></a> is maintained by <a href="https://github.com/nidunc">nidunc</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
