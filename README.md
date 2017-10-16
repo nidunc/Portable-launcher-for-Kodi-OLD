@@ -1,3 +1,6 @@
+# This is the old version of Portable launcher for Kodi, which hasn't been updated in years and won't be updated in the future.  
+For the 'reboot' of this program, I've chosen to rename the old repository (this one) and create a new repository under the previous name.
+---
 # Portable launcher for Kodi [![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg?style=flat-square)](https://raw.githubusercontent.com/nidunc/Portable-launcher-for-Kodi/master/LICENSE) [![GitHub issues](https://img.shields.io/github/issues/nidunc/Portable-launcher-for-Kodi.svg?style=flat-square)](https://github.com/nidunc/Portable-launcher-for-Kodi/issues)
 ## Table of contents
 
